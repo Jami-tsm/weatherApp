@@ -1,27 +1,36 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-   <style>@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');</style>
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static '../../static/weather/style.css' %} ">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');</style>
 </head>
 <body>
 <div id="wrapper">
 <div id="banner">
     <h1 id="bannerText">Weather App</h1>
-    <img id="bannerIcon" src="weatherIcon.png" alt="clouds and sun">
+    {% load static %}
+    <img id="bannerIcon" src="{% static '../../static/weather/weatherIcon.png' %}" alt="clouds and sun">
 </div>
 <div id="searchbar">
-    <button id="searchBut"><img id="searchIcon" src="searchIcon.png" alt="magnifying glass"></button>
-    <label>
-        <input type="text" id="searchWindow" placeholder="Search your city">
-    </label>
-</div>
+<form method="POST" id="searchWindow">
+    {% csrf_token %}
+    <div class="has-addons">
+        <div class="is-expanded">
+            {% load static %}
+            <button id="searchBut" onclick=""><img id="searchIcon" src="{% static '../../static/weather/searchIcon.png' %}" alt="magnifying glass"></button>
+            <label>
+                {{form.name}}
+            </label>
+        </div>
+    </div>
+</form>
 
-<div id="box">
+</div>
+    <div id="box">
     <article id="media">
         <div id="flow">
             <div id="media-left">
@@ -30,16 +39,15 @@
              </figure>
             </div>
             <div id="media-content">
-            <h5 id="title">{{ weather.city }}</h5>
+            <h5 id="title">{{weather.city}}</h5>
             </div>
         </div>
         <div id="media-center">
             <p class="subtitle">{{ weather.temperature }}° F</p>
             <p class="subtitle"> {{ weather.description }}</p>
         </div>
-    </article>
-</div>
+        </article>
+    </div>
 </div>
 </body>
-
 </html>

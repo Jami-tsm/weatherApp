@@ -51,30 +51,63 @@ html{
 }
 
 #searchWindow{
-    float: left;
-    margin-left: 20px;
-    font-size: xx-large;
+    /*float: left;*/
+    /*margin-left: 20px;*/
+    /*font-size: xx-large;*/
     background-color: lightgrey;
-    margin-top: 30px;
-    border: 0;
+    /*margin-top: 30px;*/
+    /*border: 0;*/
 }
+
+.has-addons{
+    margin-top: 35px;
+}
+
+.is-expanded{
+    float: left;
+    margin-bottom: 20px;
+}
+
+form{
+    font-size: x-large;
+    background-color: lightgrey;
+}
+
 
 #searchBut{
     float: left;
     height: 75px;
     width: 75px;
     /*font-size: x-large;*/
-    /*background-color: cornflowerblue;*/
-    margin-top: 20px;
+    background-color: lightgrey;
+    /*margin-top: 15px;*/
     border: 0;
-    margin-left: 35px;
+    margin-left: 20px;
+    /*position: absolute;*/
+    /*z-index: -1;*/
 }
+
+#searchWindow input[type="text"] {
+    background-color: lightgrey;
+    border: 0;
+    font-size: x-large;
+}
+
+#searchWindow #searchBut {
+    position: relative;
+    top: -20px;
+}
+
+#searchBut:hover{
+    cursor: pointer;
+}
+
 #searchIcon{
     height: 75px;
     width: 75px;
     float: left;
-    margin-left: 35px;
-    margin-top: 20px;
+    /*margin-left: 1px;*/
+    margin-top: 5px;
 }
 
 #box{
@@ -91,7 +124,7 @@ html{
     margin-top: 20px;
     margin-right: 150px;
     font-size: x-large;
-    margin-left: 75px;
+    margin-left: 70px;
 }
 
 #media-left{
@@ -107,7 +140,7 @@ html{
 }
 
 #media{
-        display: flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -127,7 +160,7 @@ html{
 #media-center{
     align-self: center;
     align-content: center;
-    margin-bottom: 75px;
+    margin-bottom: 80px;
 }
 #content{
         align-self: center;
